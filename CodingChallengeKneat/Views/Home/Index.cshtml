@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CodingChallengeKneat.Models.StarShip>  
+@{
+    ViewBag.Title = "StarShip";
+}
+<p>This application help you to calculate how many stop for resuply are required a star ship for a given distance.</p>
+<div class="form-group">
+    @using (Html.BeginForm("StopList", "Home", FormMethod.Post))
+    {
+        @Html.Label("Distance")
+        @Html.TextBox("distance")
+        <button type="submit" id="sentDist">Send</button>
+    }
+</div>
+
+    <div id="result">
+             
+    </div>
+@*<script>
+    $(document).ready(function () {
+        $('#sentDist').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("StopList", "Home")',
+                dataType: "json",
+                data: $('form').serialize(),
+                success: function (response) {
+                    $('#result').html(response);
+                    $('#result').dialog('open');
+                },
+                failure: function (response) {
+                    alert('failure');
+                },
+                error: function (response) {
+                    alert('error');
+                }
+            });
+        });
+    });
+</script>*@
+
+
+
+
+
+
